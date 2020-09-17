@@ -5,7 +5,7 @@ totals_foraging = array(NA, dim = c(33,4,4,12))
 tps = c(-32:0)
 for(n in c(1:12)){
   print(n)
-  eigens=  read.csv(paste("/Users/eriksaberski/Desktop/C. Elegans Analysis/Data/Foraging Worms/w",n,"/tracking.txt",sep = ""), header = F, sep = "")
+  eigens=  read.csv(paste("/Data/Foraging Worms/w",n,"/tracking.txt",sep = ""), header = F, sep = "")
   out = mclapply(as.data.frame(eigens), do_worm_ccm_TP, mc.cores = detectCores()-1)
   out = as.data.frame(out)
   loop = 1
@@ -51,7 +51,7 @@ totals_E = array(NA, dim = c(4,4,12))
 Es = c(2:40)
 for(n in c(1:12)){
   print(n)
-  eigens=  read.csv(paste("/Users/eriksaberski/Desktop/C. Elegans Analysis/Data/Foraging Worms/w",n,"/tracking.txt",sep = ""), header = F, sep = "")
+  eigens=  read.csv(paste("/Data/Foraging Worms/w",n,"/tracking.txt",sep = ""), header = F, sep = "")
   
   for(i in c(1:4)){
     print(i)
