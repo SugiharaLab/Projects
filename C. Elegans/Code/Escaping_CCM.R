@@ -6,12 +6,12 @@ do_ccm_escaping <- function(tp,m, E = 10){
   return(mean(out$rho))
 }
 
-worms = list.files(paste0(getwd(),"/For Github/Data/Escape Response Worms"))
+worms = list.files(paste0("/Data/Escape Response Worms"))
 totals_Escaping = array(NA, dim = c(41,4,4,length(worms)))
 count = 1
 for(w in worms){
   print(w)
-  eigens = read.csv(paste0(getwd(),"/For Github/Data/Escape Response Worms/",w), header = T)
+  eigens = read.csv(paste0("/Data/Escape Response Worms/",w), header = T)
   eigens = eigens[200:600,] #the first 200 timepoints are pre-stimulus and are thus excluded.
   for(i in c(1:4)){
     for(j in c(1:4)){
@@ -61,12 +61,12 @@ do_ccm_escaping <- function(E,m,tp){
 }
 
 Es = c(2:40)
-worms = list.files(paste0(getwd(),"/For Github/Data/Escape Response Worms"))
+worms = list.files(paste0("/Data/Escape Response Worms"))
 totals_E_escaping = array(NA, dim = c(4,4,length(worms)))
 count = 1
 for(w in worms){
   print(w)
-  eigens = read.csv(paste0(getwd(),"/For Github/Data/Escape Response Worms/",w), header = T)
+  eigens = read.csv(paste0("/Data/Escape Response Worms/",w), header = T)
   eigens = eigens[200:600,] #the first 200 timepoints are pre-stimulus and are thus excluded.
   for(i in c(1:4)){
     for(j in c(1:4)){
